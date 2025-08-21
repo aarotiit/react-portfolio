@@ -1,14 +1,23 @@
-const App = () => {
-  const now = new Date();
-  const a = 10;
-  const b = 20;
-  console.log(now, a + b);
+const Hello = (props) => {
+  console.log(props);
   return (
     <div>
-      <p>Hello World, it is {now.toString()}</p>
       <p>
-        {a} plus {b} equals {a + b}
+        Hello {props.name}, you are {props.age} years old
       </p>
+    </div>
+  );
+};
+
+const App = () => {
+  const nimi = "Pekka";
+  const ika = 20;
+  return (
+    <div>
+      <h1>Greetings</h1>
+
+      <Hello name="Pekka" age={30 + 12} />
+      <Hello name={nimi} age={ika} />
     </div>
   );
 };
